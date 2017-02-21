@@ -1,16 +1,17 @@
 "use strict";
 
-module.exports = function (sequelize, DataTypes) {
+module.exports = function(sequelize, DataTypes) {
     var DrawResults = sequelize.define("DrawResults", {
-        msisdn: DataTypes.STRING,
+        label: DataTypes.STRING, //prize & date
         drawDate: DataTypes.DATE,
-        orderInDraw: DataTypes.INTEGER,
-        isFinalizedResult: DataTypes.BOOLEAN,
-        isSubstitute: DataTypes.BOOLEAN
+        winners: DataTypes.INTEGER,
+        substitutes: DataTypes.INTEGER,
+        isFinalizedResult: DataTypes.BOOLEAN
     }, {
             classMethods: {
-                associate: function (models) {
+                associate: function(models) {
                     DrawResults.belongsTo(models.DrawTypes);
+                    DrawResults.belongsTo(models.Draw);
                 }
             }
         });

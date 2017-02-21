@@ -21,11 +21,11 @@ app.set('port', port);
  */
 let server = http.createServer(app);
 
-models.sequelize.sync({ force: false }).then(function () {
+models.sequelize.sync({ force: false }).then(function() {
     /**
      * Listen on provided port, on all network interfaces.
      */
-    server.listen(port, function () {
+    server.listen(port, function() {
         debug('Express server listening on port ' + server.address().port);
     });
     server.on('error', onError);

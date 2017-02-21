@@ -7,8 +7,15 @@ module.exports = function (sequelize, DataTypes) {
         prize: DataTypes.STRING,
         winners: DataTypes.INTEGER,
         substitutes: DataTypes.INTEGER,
-        daysFrequency: DataTypes.INTEGER
-    });
+        daysFrequency: DataTypes.INTEGER,
+        serviceId: DataTypes.INTEGER
+    }, {
+            classMethods: {
+                associate: function (models) {
+                    DrawTypes.belongsTo(models.Draw);
+                }
+            }
+        });
 
     return DrawTypes;
 };
