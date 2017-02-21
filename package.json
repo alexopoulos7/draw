@@ -1,0 +1,42 @@
+{
+  "name": "draw",
+  "version": "1.0.0",
+  "description": "A Node draw api and site",
+  "main": "index.js",
+  "scripts": {
+    "start": "DEBUG=express-sequelize node index.js",
+    "test": "npm run test-unit && npm run test-integration",
+    "test-unit": "cross-env NODE_ENV=test ./node_modules/.bin/mocha test/unit/*.test.js",
+    "test-integration": "cross-env NODE_ENV=test ./node_modules/.bin/mocha test/integration/*.test.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/alexopoulos7/draw.git"
+  },
+  "keywords": [
+    "draw",
+    "express",
+    "angular2"
+  ],
+  "author": "Angelos Alexopoulos",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/alexopoulos7/draw/issues"
+  },
+  "homepage": "https://github.com/alexopoulos7/draw#readme",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "body-parser": "^1.16.1",
+    "cookie-parser": "^1.4.3",
+    "cors": "^2.8.1",
+    "dotenv": "^4.0.0",
+    "express": "^4.14.1",
+    "express-session": "^1.15.1",
+    "morgan": "^1.8.1",
+    "passport": "^0.3.2",
+    "passport-local": "^1.0.0",
+    "pg": "^6.1.2",
+    "pg-hstore": "^2.3.2",
+    "sequelize": "^3.30.2"
+  }
+}
